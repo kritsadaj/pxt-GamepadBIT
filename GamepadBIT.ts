@@ -6,7 +6,7 @@ load dependency
 */
 
 //% color="#C814B8" weight=20 icon="\uf11b"
-namespace GHBit {
+namespace GamepadBIT {
 
     const PCA9685_ADD = 0x41;
     const MODE1 = 0x00;
@@ -26,7 +26,8 @@ namespace GHBit {
     const ALL_LED_OFF_H = 0xFD;
 
     const PRESCALE = 0xFE;
-
+    let centerX = 730;
+    let centerY = 730;
     let initialized = false;
     let yahStrip: neopixel.Strip;
     
@@ -262,6 +263,18 @@ namespace GHBit {
             }
         }               
     }
+            
+    /**
+     * set JoyStick 'Center' Positon. 
+     * @param Center number of center , eg: 730
+     */
+    //% blockId=GamepadBIT_SetRocker block="SetRocker|Center %Center"
+    //% weight=97 blockGap=10
+    //% Center.min=450 Center.max=900
+    export function SetRocker(Center: number=730) {
+        centerX=Center;
+        centerY=Center;
+    }            
     
     //% blockId=GHBit_Rocker block="Rocker|value %value"
     //% weight=96
@@ -276,24 +289,24 @@ namespace GHBit {
         let z = pins.digitalReadPin(DigitalPin.P8);
         let now_state = enRocker.Nostate;
 
-        if (x < 200) // 上
+        if (x < 200) // ขึ้น
         {
 
             now_state = enRocker.Up;
 
         }
-        else if (x > 730) //下 900 -> 730
+        else if (x > CenterX) // ลง
         {
 
             now_state = enRocker.Down;
         }
         else  // 左右
         {
-            if (y < 200) //右
+            if (y < 200) // ขวา
             {
                 now_state = enRocker.Right;
             }
-            else if (y > 730) //左 900 -> 730
+            else if (y > CenterY) // ซ้าย
             {
                 now_state = enRocker.Left;
             }
