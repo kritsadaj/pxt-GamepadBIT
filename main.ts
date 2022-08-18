@@ -268,15 +268,15 @@ namespace GamepadBIT {
      * set JoyStick 'Center' Positon. 
      * @param Center number of center , eg: 730
      */
-    //% blockId=GamepadBIT_SetRocker block="SetRocker|Center %Center"
+    //% blockId=GamepadBIT_SetRocker block="SetJoyStick|Center %Center"
     //% weight=97 blockGap=10
     //% Center.min=450 Center.max=900
-    export function SetRocker(Center: number=730) {
+    export function Set๋JoyStick(Center: number=730) {
         centerX=Center;
         centerY=Center;
     }            
     
-    //% blockId=GHBit_Rocker block="Rocker|value %value"
+    //% blockId=GHBit_Rocker block="JoyStick|value %value"
     //% weight=96
     //% blockGap=10
     //% color="#C814B8"
