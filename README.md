@@ -1,7 +1,7 @@
-# GHBit
+# Gamepad:BIT
+Extension for INEX GamepadBIT  and Yahboom GHBit_V1/V2 3.0.3 
 
-Extension for Yahboom GHBit_V1/V2 3.0.3 and inex GamepadBIT
-
+Forked from https://github.com/lzty634158/GHBit
 ## License
 
 MIT
