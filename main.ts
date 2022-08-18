@@ -242,8 +242,8 @@ namespace GamepadBIT {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function RGB_Program_Close(): void {
         pins.digitalWritePin(DigitalPin.P4, 0);
-        GHBit.RGB_Program().clear();
-        GHBit.RGB_Program().show();
+        GamepadBIT.RGB_Program().clear();
+        GamepadBIT.RGB_Program().show();
     }
     
     //% blockId=GHBit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
@@ -295,7 +295,7 @@ namespace GamepadBIT {
             now_state = enRocker.Up;
 
         }
-        else if (x > CenterX) // ลง
+        else if (x > centerX) // ลง
         {
 
             now_state = enRocker.Down;
@@ -306,7 +306,7 @@ namespace GamepadBIT {
             {
                 now_state = enRocker.Right;
             }
-            else if (y > CenterY) // ซ้าย
+            else if (y > centerY) // ซ้าย
             {
                 now_state = enRocker.Left;
             }
